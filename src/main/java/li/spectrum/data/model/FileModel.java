@@ -12,6 +12,8 @@ public class FileModel {
 
 	private Processing processing;
 
+	private File file;
+
 	public String getFilePath() {
 		return filePath;
 	}
@@ -34,6 +36,14 @@ public class FileModel {
 
 	public void setProcessing(Processing processing) {
 		this.processing = processing;
+	}
+
+	public File getFile() {
+		return file;
+	}
+
+	public void setFile(File file) {
+		this.file = file;
 	}
 
 }
