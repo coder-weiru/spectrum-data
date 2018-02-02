@@ -1,7 +1,9 @@
 package li.spectrum.data.model;
 
 public class File {
-	private String path;
+	private String name;
+	private String canonicalPath;
+	private Metadata _metadata;
 
 	public File() {
 		super();
@@ -9,15 +11,31 @@ public class File {
 
 	public File(String path) {
 		super();
-		this.path = path;
+		this.canonicalPath = path;
 	}
 
-	public String getPath() {
-		return path;
+	public String getName() {
+		return name;
 	}
 
-	public void setPath(String path) {
-		this.path = path;
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getCanonicalPath() {
+		return canonicalPath;
+	}
+
+	public void setCanonicalPath(String canonicalPath) {
+		this.canonicalPath = canonicalPath;
+	}
+
+	public Metadata get_metadata() {
+		return _metadata;
+	}
+
+	public void set_metadata(Metadata _metadata) {
+		this._metadata = _metadata;
 	}
 
 }

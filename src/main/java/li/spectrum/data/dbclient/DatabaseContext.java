@@ -2,10 +2,8 @@ package li.spectrum.data.dbclient;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
-import org.springframework.stereotype.Component;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.marklogic.client.pojo.PojoRepository;
@@ -15,8 +13,6 @@ import li.spectrum.data.model.Proc;
 import li.spectrum.data.security.ClientRole;
 
 
-@Component
-@ComponentScan
 @PropertySource("classpath:application.properties")
 public class DatabaseContext {
 

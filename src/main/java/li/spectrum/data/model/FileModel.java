@@ -8,7 +8,7 @@ public class FileModel {
 	@Id
 	public String filePath;
 
-	private TikaDocument tikaDocument;
+	private TikaModel tikaModel;
 
 	private Processing processing;
 
@@ -20,12 +20,12 @@ public class FileModel {
 		this.filePath = filePath;
 	}
 
-	public TikaDocument getTikaDocument() {
-		return tikaDocument;
+	public TikaModel getTikaModel() {
+		return tikaModel;
 	}
 
-	public void setTikaDocument(TikaDocument tikaDocument) {
-		this.tikaDocument = tikaDocument;
+	public void setTikaModel(TikaModel tikaModel) {
+		this.tikaModel = tikaModel;
 	}
 
 	public Processing getProcessing() {

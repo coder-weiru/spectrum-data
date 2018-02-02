@@ -42,8 +42,8 @@ public class Proc {
 		return this.files.add(file);
 	}
 
-	public boolean addDir(Dir dir) {
-		return this.files.add(dir);
+	public boolean addFolder(Folder folder) {
+		return this.files.add(folder);
 	}
 
 	public String getRootDir() {

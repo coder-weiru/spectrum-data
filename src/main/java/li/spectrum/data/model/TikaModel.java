@@ -4,10 +4,10 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-public class TikaDocument {
+public class TikaModel {
 	private Map<String, Object> metadata;
 
-	public TikaDocument() {
+	public TikaModel() {
 		metadata = new HashMap<String, Object>();
 	}
 
