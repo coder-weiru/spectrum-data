@@ -3,7 +3,7 @@ package li.spectrum.data.model;
 public class File {
 	private String name;
 	private String canonicalPath;
-	private Metadata _metadata;
+	private Metadata _metadata = new Metadata();
 
 	public File() {
 		super();
