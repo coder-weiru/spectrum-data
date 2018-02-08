@@ -1,6 +1,9 @@
 package li.spectrum.data.model;
 
-public class Processing {
+import java.io.Serializable;
+
+public class Processing implements Serializable {
+	private static final long serialVersionUID = 4533483733567225148L;
 	private String taskName;
 	private String status;
 	private Exception exception;

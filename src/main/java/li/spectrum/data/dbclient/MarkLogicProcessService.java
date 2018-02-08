@@ -34,7 +34,7 @@ public class MarkLogicProcessService extends MarkLogicBaseService implements Pro
 	}
 
 	@Override
-	public void add(Proc process) {
+	public void addOrUpdate(Proc process) {
 		logger.info("Adding process with id {}", process.getId());
 		repository.write(process, collectionName);
 	}

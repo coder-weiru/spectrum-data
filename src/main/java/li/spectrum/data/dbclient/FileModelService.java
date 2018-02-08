@@ -4,7 +4,7 @@ import li.spectrum.data.model.FileModel;
 
 public interface FileModelService {
 
-	void add(FileModel file);
+	void addOrUpdate(FileModel file);
 
 	FileModel get(String id);
 }

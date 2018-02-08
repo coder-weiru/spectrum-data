@@ -4,7 +4,7 @@ import li.spectrum.data.model.Proc;
 
 public interface ProcessService {
 
-	void add(Proc process);
+	void addOrUpdate(Proc process);
 
 	Proc get(String procId);
 }

@@ -1,6 +1,9 @@
 package li.spectrum.data.model;
 
-public class File {
+import java.io.Serializable;
+
+public class File implements Serializable {
+	private static final long serialVersionUID = 6475121205416507298L;
 	private String name;
 	private String canonicalPath;
 	private Metadata _metadata = new Metadata();

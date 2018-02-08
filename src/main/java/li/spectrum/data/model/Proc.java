@@ -1,17 +1,19 @@
 package li.spectrum.data.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 import com.marklogic.client.pojo.annotation.Id;
 
-public class Proc {
+public class Proc implements Serializable {
+	private static final long serialVersionUID = -2566506139771557L;
 	@Id
 	public String id;
 	private String rootDir;
 	private String timestamp;
-	private List<File> files = new ArrayList<File>();
-	private int totalFileCount;
+	private List<Record> records = new ArrayList<Record>();
+	private int totalRecordCount;
 	private Processing processing;
 
 	public String getId() {
@@ -30,20 +32,16 @@ public class Proc {
 		this.timestamp = timestamp;
 	}
 
-	public List<File> getFiles() {
-		return files;
+	public List<Record> getRecords() {
+		return records;
 	}
 
-	public void setFiles(List<File> files) {
-		this.files = files;
+	public void setRecords(List<Record> records) {
+		this.records = records;
 	}
 
-	public boolean addFile(File file) {
-		return this.files.add(file);
-	}
-
-	public boolean addFolder(Folder folder) {
-		return this.files.add(folder);
+	public boolean addRecord(Record record) {
+		return this.records.add(record);
 	}
 
 	public String getRootDir() {
@@ -62,12 +60,12 @@ public class Proc {
 		this.processing = processing;
 	}
 
-	public long getTotalFileCount() {
-		return totalFileCount;
+	public int getTotalRecordCount() {
+		return totalRecordCount;
 	}
 
-	public void setTotalFileCount(int totalFileCount) {
-		this.totalFileCount = totalFileCount;
+	public void setTotalRecordCount(int totalRecordCount) {
+		this.totalRecordCount = totalRecordCount;
 	}
 
 }

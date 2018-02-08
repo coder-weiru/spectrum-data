@@ -2,6 +2,7 @@ package li.spectrum.data.model;
 
 public class Folder extends File {
 
+	private static final long serialVersionUID = -2418943571618711253L;
 	private int itemCount;
 	private int folderCount;
 	private int fileCount;

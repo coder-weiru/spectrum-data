@@ -1,10 +1,12 @@
 package li.spectrum.data.model;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-public class TikaModel {
+public class TikaModel implements Serializable {
+	private static final long serialVersionUID = -1298242849602486987L;
 	private Map<String, Object> metadata;
 
 	public TikaModel() {
