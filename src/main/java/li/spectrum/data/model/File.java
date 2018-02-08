@@ -5,6 +5,11 @@ import java.io.Serializable;
 public class File implements Serializable {
 	private static final long serialVersionUID = 6475121205416507298L;
 	private String name;
+	private String parentPath;
+	private boolean isHidden;
+	private long lastModified;
+	private String uri;
+	private long size;
 	private String canonicalPath;
 	private Metadata _metadata = new Metadata();
 
@@ -39,6 +44,46 @@ public class File implements Serializable {
 
 	public void set_metadata(Metadata _metadata) {
 		this._metadata = _metadata;
+	}
+
+	public String getParentPath() {
+		return parentPath;
+	}
+
+	public void setParentPath(String parentPath) {
+		this.parentPath = parentPath;
+	}
+
+	public boolean isHidden() {
+		return isHidden;
+	}
+
+	public void setHidden(boolean isHidden) {
+		this.isHidden = isHidden;
+	}
+
+	public long getLastModified() {
+		return lastModified;
+	}
+
+	public void setLastModified(long lastModified) {
+		this.lastModified = lastModified;
+	}
+
+	public String getUri() {
+		return uri;
+	}
+
+	public void setUri(String uri) {
+		this.uri = uri;
+	}
+
+	public long getSize() {
+		return size;
+	}
+
+	public void setSize(long size) {
+		this.size = size;
 	}
 
 }

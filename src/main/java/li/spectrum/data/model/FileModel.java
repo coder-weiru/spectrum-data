@@ -1,12 +1,13 @@
 package li.spectrum.data.model;
 
+import org.springframework.util.Assert;
+
 import com.marklogic.client.pojo.annotation.Id;
 
 
 public class FileModel {
 
-	@Id
-	public String filePath;
+	public String path;
 
 	private TikaModel tikaModel;
 
@@ -14,12 +15,11 @@ public class FileModel {
 
 	private File file;
 
-	public String getFilePath() {
-		return filePath;
-	}
+	@Id
+	public String getPath() {
+		Assert.notNull(file, "'file' must not be null");
 
-	public void setFilePath(String filePath) {
-		this.filePath = filePath;
+		return file.getCanonicalPath();
 	}
 
 	public TikaModel getTikaModel() {

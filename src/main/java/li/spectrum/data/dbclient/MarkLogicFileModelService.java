@@ -33,7 +33,7 @@ public class MarkLogicFileModelService extends MarkLogicBaseService implements F
 
 	@Override
 	public void addOrUpdate(FileModel file) {
-		logger.info("Adding FileModel with id {}", file.getFilePath());
+		logger.info("Adding FileModel with id {}", file.getPath());
 		repository.write(file, collectionName);
 	}
 
