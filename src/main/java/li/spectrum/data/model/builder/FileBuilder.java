@@ -40,6 +40,7 @@ public class FileBuilder {
 				}
 			}
 			folder.setItemCount(folder.getFolderCount() + folder.getFileCount());
+			directoryStream.close();
 		} else {
 			file = new File(path.toString());
 		}
@@ -51,6 +52,7 @@ public class FileBuilder {
 
 		FileChannel fileChannel = FileChannel.open(path);
 		file.setSize(fileChannel.size());
+		fileChannel.close();
 
 		Metadata meta = file.get_metadata();
 		meta.setType(file.getClass().getSimpleName());
