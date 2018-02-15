@@ -6,7 +6,8 @@ public class File implements Serializable {
 	private static final long serialVersionUID = 6475121205416507298L;
 	private String name;
 	private String parentPath;
-	private boolean isHidden;
+	private boolean parentHidden;
+	private boolean hidden;
 	private long lastModified;
 	private String uri;
 	private long size;
@@ -54,12 +55,20 @@ public class File implements Serializable {
 		this.parentPath = parentPath;
 	}
 
-	public boolean isHidden() {
-		return isHidden;
+	public boolean isParentHidden() {
+		return parentHidden;
 	}
 
-	public void setHidden(boolean isHidden) {
-		this.isHidden = isHidden;
+	public void setParentHidden(boolean parentHidden) {
+		this.parentHidden = parentHidden;
+	}
+
+	public boolean isHidden() {
+		return hidden;
+	}
+
+	public void setHidden(boolean hidden) {
+		this.hidden = hidden;
 	}
 
 	public long getLastModified() {

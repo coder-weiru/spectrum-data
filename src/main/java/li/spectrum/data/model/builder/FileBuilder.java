@@ -46,6 +46,7 @@ public class FileBuilder {
 		}
 		file.setName(path.getFileName().toString());
 		file.setParentPath(f.getParent());
+		file.setParentHidden(f.getParentFile().isHidden());
 		file.setHidden(f.isHidden());
 		file.setLastModified(f.lastModified());
 		file.setUri(f.toURI().toString());
