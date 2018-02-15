@@ -1,13 +1,22 @@
 package li.spectrum.data.model;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
-import java.util.ListIterator;
 
-public class FolderCollection {
+public class FolderCollection extends BasicPage<Folder> {
+
 	private List<Folder> folders = new ArrayList<Folder>();
+
+	public FolderCollection(List<Folder> list, long start, long pageSize, long totalSize) {
+		this(list.iterator(), start, pageSize, totalSize);
+		this.folders = list;
+	}
+
+	public FolderCollection(Iterator<Folder> iterator, long start, long pageSize, long totalSize) {
+		super(iterator, start, pageSize, totalSize);
+		
+	}
 
 	public List<Folder> getFolders() {
 		return folders;
@@ -17,40 +26,69 @@ public class FolderCollection {
 		this.folders = folders;
 	}
 
-	public int size() {
-		return folders.size();
+	@Override
+	public boolean hasNext() {
+		return super.hasNext();
 	}
 
-	public boolean isEmpty() {
-		return folders.isEmpty();
+	@Override
+	public Folder next() {
+		return super.next();
 	}
 
-	public Iterator<Folder> iterator() {
-		return folders.iterator();
+	@Override
+	public long getStart() {
+		return super.getStart();
 	}
 
-	public boolean add(Folder e) {
-		return folders.add(e);
+	@Override
+	public long getPageSize() {
+		return super.getPageSize();
 	}
 
-	public boolean remove(Object o) {
-		return folders.remove(o);
+	@Override
+	public long getTotalSize() {
+		return super.getTotalSize();
 	}
 
-	public boolean addAll(Collection<? extends Folder> c) {
-		return folders.addAll(c);
+	@Override
+	public long getTotalPages() {
+		return super.getTotalPages();
 	}
 
-	public boolean removeAll(Collection<?> c) {
-		return folders.removeAll(c);
+	@Override
+	public boolean hasContent() {
+		return super.hasContent();
 	}
 
-	public Folder remove(int index) {
-		return folders.remove(index);
+	@Override
+	public boolean hasNextPage() {
+		return super.hasNextPage();
 	}
 
-	public ListIterator<Folder> listIterator() {
-		return folders.listIterator();
+	@Override
+	public boolean hasPreviousPage() {
+		return super.hasPreviousPage();
+	}
+
+	@Override
+	public long getPageNumber() {
+		return super.getPageNumber();
+	}
+
+	@Override
+	public boolean isFirstPage() {
+		return super.isFirstPage();
+	}
+
+	@Override
+	public boolean isLastPage() {
+		return super.isLastPage();
+	}
+
+	@Override
+	public long size() {
+		return super.size();
 	}
 
 }
