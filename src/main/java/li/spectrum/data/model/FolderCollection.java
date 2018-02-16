@@ -8,6 +8,10 @@ public class FolderCollection extends BasicPage<Folder> {
 
 	private List<Folder> folders = new ArrayList<Folder>();
 
+	public static FolderCollection emptyCollection() {
+		return new FolderCollection(new ArrayList<Folder>(), 0, 0, 0);
+	}
+
 	public FolderCollection(List<Folder> list, long start, long pageSize, long totalSize) {
 		this(list.iterator(), start, pageSize, totalSize);
 		this.folders = list;
