@@ -7,6 +7,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
+import org.springframework.util.StringUtils;
+
 import li.spectrum.data.model.File;
 import li.spectrum.data.model.Folder;
 import li.spectrum.data.model.Metadata;
@@ -47,6 +49,16 @@ public class FileBuilder {
 		file.setName(path.getFileName().toString());
 		file.setParentPath(f.getParent());
 		file.setParentHidden(f.getParentFile().isHidden());
+		
+		java.io.File parentFile = f.getParentFile();
+		while (parentFile!=null && parentFile.exists()) {
+			String fname = parentFile.getName();
+			if (!StringUtils.isEmpty(fname)) {
+				file.addParentFolder(fname);
+			}
+			parentFile = parentFile.getParentFile();
+		}
+		
 		file.setHidden(f.isHidden());
 		file.setLastModified(f.lastModified());
 		file.setUri(f.toURI().toString());
@@ -61,4 +73,5 @@ public class FileBuilder {
 
 		return file;
 	}
+	
 }
