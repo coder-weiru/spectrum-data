@@ -1,15 +1,15 @@
 package li.spectrum.data.model;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
+
+import org.springframework.util.StringUtils;
 
 public class File implements Serializable {
 	private static final long serialVersionUID = 6475121205416507298L;
 	private String name;
 	private String parentPath;
 	private boolean parentHidden;
-	private List<String> parentFolders = new ArrayList<String>();
+	private String parentFolders;
 	private boolean hidden;
 	private long lastModified;
 	private String uri;
@@ -98,20 +98,16 @@ public class File implements Serializable {
 		this.size = size;
 	}
 
-	public List<String> getParentFolders() {
+	public String getParentFolders() {
 		return parentFolders;
 	}
 
-	public void setParentFolders(List<String> parentFolders) {
-		this.parentFolders = parentFolders;
-	}
-
-	public boolean addParentFolder(String folder) {
-		return parentFolders.add(folder);
-	}
-
-	public void addParentFolder(int index, String folder) {
-		parentFolders.add(index, folder);
+	public void addParentFolder(String folder) {
+		if (!StringUtils.isEmpty(parentFolders)) {
+			parentFolders += " " + folder;
+		} else {
+			parentFolders = folder;
+		}
 	}
 
 }
