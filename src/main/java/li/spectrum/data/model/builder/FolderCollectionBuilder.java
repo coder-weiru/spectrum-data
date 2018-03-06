@@ -17,7 +17,7 @@ public class FolderCollectionBuilder {
 		super();
 	}
 
-	public FolderCollectionBuilder setFileModelPaGE(PojoPage<FileModel> fileModelPage) {
+	public FolderCollectionBuilder setFileModelPage(PojoPage<FileModel> fileModelPage) {
 		this.fileModelPage = fileModelPage;
 		return this;
 	}
