@@ -14,8 +14,12 @@ public class DocumentCollectionBuilder {
 
 	private PojoPage<FileModel> fileModelPage;
 
-	public DocumentCollectionBuilder() {
+	private DocumentCollectionBuilder() {
 		super();
+	}
+
+	public static DocumentCollectionBuilder newBuilder() {
+		return new DocumentCollectionBuilder();
 	}
 
 	public DocumentCollectionBuilder setFileModelPage(PojoPage<FileModel> fileModelPage) {

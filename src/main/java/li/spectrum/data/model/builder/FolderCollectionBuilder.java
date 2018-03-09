@@ -13,8 +13,12 @@ public class FolderCollectionBuilder {
 
 	private PojoPage<FileModel> fileModelPage;
 
-	public FolderCollectionBuilder() {
+	private FolderCollectionBuilder() {
 		super();
+	}
+
+	public static FolderCollectionBuilder newBuilder() {
+		return new FolderCollectionBuilder();
 	}
 
 	public FolderCollectionBuilder setFileModelPage(PojoPage<FileModel> fileModelPage) {
