@@ -11,7 +11,6 @@ import org.springframework.util.StringUtils;
 
 import li.spectrum.data.model.File;
 import li.spectrum.data.model.Folder;
-import li.spectrum.data.model.Metadata;
 
 public class FileBuilder {
 
@@ -62,14 +61,11 @@ public class FileBuilder {
 		file.setHidden(f.isHidden());
 		file.setLastModified(f.lastModified());
 		file.setUri(f.toURI().toString());
+		file.setType(file.getClass().getSimpleName());
 
 		FileChannel fileChannel = FileChannel.open(path);
 		file.setSize(fileChannel.size());
 		fileChannel.close();
-
-		Metadata meta = file.get_metadata();
-		meta.setType(file.getClass().getSimpleName());
-		meta.setUri(file.getUri());
 
 		return file;
 	}

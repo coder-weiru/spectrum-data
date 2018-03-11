@@ -14,8 +14,8 @@ public class File implements Serializable {
 	private long lastModified;
 	private String uri;
 	private long size;
+	private String type;
 	private String canonicalPath;
-	private Metadata _metadata = new Metadata();
 
 	public File() {
 		super();
@@ -42,12 +42,12 @@ public class File implements Serializable {
 		this.canonicalPath = canonicalPath;
 	}
 
-	public Metadata get_metadata() {
-		return _metadata;
+	public String getType() {
+		return type;
 	}
 
-	public void set_metadata(Metadata _metadata) {
-		this._metadata = _metadata;
+	public void setType(String type) {
+		this.type = type;
 	}
 
 	public String getParentPath() {

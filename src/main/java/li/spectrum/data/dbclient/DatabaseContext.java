@@ -2,6 +2,7 @@ package li.spectrum.data.dbclient;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 
@@ -75,6 +76,7 @@ public class DatabaseContext {
 	 *         container
 	 */
 	@Bean
+	@Primary
 	public ObjectMapper mapper() {
 		return new CustomObjectMapper();
 	}
